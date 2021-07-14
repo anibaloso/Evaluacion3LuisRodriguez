@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EstacionesDAL.DAL
+namespace EstacioneDAL.DAL
 {
     public class PuntoDeCargaDAL
     {
@@ -21,6 +21,10 @@ namespace EstacionesDAL.DAL
         public List<PuntoDeCarga>GetAll(int numeroPunto)
         {
             return puntoDeCargas.FindAll(c => c.NumeroPuntoDeCarga == numeroPunto);
+        }
+        public List<PuntoDeCarga>GetAllTipo(String tipo)
+        {
+            return puntoDeCargas.FindAll(c => c.Tipo == tipo);
         }
         public void Remove(int numeroPunto)
         {

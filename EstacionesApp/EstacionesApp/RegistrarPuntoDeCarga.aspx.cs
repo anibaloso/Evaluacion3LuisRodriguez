@@ -1,5 +1,5 @@
-﻿using EstacionesDAL;
-using EstacionesDAL.DAL;
+﻿using EstacioneDAL;
+using EstacioneDAL.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -41,7 +41,7 @@ namespace EstacionesApp
                 s.Region = nombreRegion;
                 s.Tipo = tipo;
 
-                PuntoDeCargaDAL puntoDeCargaDAL = new PuntoDeCargaDAL();
+                EstacioneDAL.DAL.PuntoDeCargaDAL puntoDeCargaDAL = new EstacioneDAL.DAL.PuntoDeCargaDAL();
                 puntoDeCargaDAL.Add(s);
 
                 mensajeLbl.Text = "Punto de Carga Ingresado correctamente";

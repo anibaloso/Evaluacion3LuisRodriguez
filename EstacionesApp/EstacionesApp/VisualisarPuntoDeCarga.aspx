@@ -3,8 +3,15 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-
+    
     <div class="mt-5">
+        
+        <asp:DropDownList ID="filtroTipo" AutoPostBack="true" runat="server"
+            OnSelectedIndexChanged="filtroTipo_SelectedIndexChanged">
+            <asp:ListItem Value="1" Selected="True" Text="Bencina"></asp:ListItem>
+            <asp:ListItem Value="2" Text="Electrica"></asp:ListItem>
+        </asp:DropDownList>
+
         <asp:GridView ID="puntoDeCargaGrid" runat="server" AutoGenerateColumns="false"
             EmptyDataText="No hay Puntos de Carga ingresados" CssClass="table table-hover"
             OnRowCommand="puntoDeCargaGrid_RowCommand">

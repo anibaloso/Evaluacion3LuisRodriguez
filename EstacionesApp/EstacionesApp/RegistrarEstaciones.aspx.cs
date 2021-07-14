@@ -1,5 +1,5 @@
-﻿using EstacionesDAL;
-using EstacionesDAL.DAL;
+﻿using EstacioneDAL;
+using EstacioneDAL.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +24,7 @@ namespace EstacionesApp
                 TipoDdl.DataTextField = "nombreTipo";
                 TipoDdl.DataBind();
             }
+
         }
 
         protected void registrarBtn_Click(object sender, EventArgs e)
@@ -42,7 +43,7 @@ namespace EstacionesApp
                 s.Tipo = tipo;
 
 
-                EstacioneDAL estacioneDAL = new EstacioneDAL();
+                EstacioneDAL.DAL.EstacioneDAL estacioneDAL = new EstacioneDAL.DAL.EstacioneDAL();
                 estacioneDAL.Add(s);
 
                 mensajeLbl.Text = "Estacion Ingresada";

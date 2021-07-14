@@ -1,5 +1,5 @@
-﻿using EstacionesDAL;
-using EstacionesDAL.DAL;
+﻿using EstacioneDAL;
+using EstacioneDAL.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +21,7 @@ namespace EstacionesApp
             
             if (!IsPostBack)
             {
-                CargarTabla(new EstacioneDAL().GetAll());
+                CargarTabla(new EstacioneDAL.DAL.EstacioneDAL().GetAll());
             }
         }
 
@@ -30,10 +30,10 @@ namespace EstacionesApp
             if (e.CommandName == "eliminar")
             {
                 String numeroEstacion = e.CommandArgument.ToString();
-                EstacioneDAL estacioneDAL = new EstacioneDAL();
+                EstacioneDAL.DAL.EstacioneDAL estacioneDAL = new EstacioneDAL.DAL.EstacioneDAL();
                 estacioneDAL.Remove(Convert.ToInt32(numeroEstacion));
 
-                CargarTabla(new EstacioneDAL().GetAll());
+                CargarTabla(new EstacioneDAL.DAL.EstacioneDAL().GetAll());
             }
         }
     }
